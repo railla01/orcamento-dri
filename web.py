@@ -3,18 +3,18 @@ from threading import Thread
 from flask import Flask
 import os
 
+# Inicializa o bot em paralelo
 def iniciar_bot():
-    print("🚀 DRI rodando via Web Service no Render!")
+    print("🤖 DRI rodando via Web Service no Render!")
     app.run()
 
-web_app = Flask("DRI-FakeServer")
+# Web app do Flask
+web_app = Flask("DRI-Flask")
 
 @web_app.route("/")
 def home():
     return "✅ DRI Bot está online!"
 
+# Start apenas do bot (Flask é gerenciado pelo Gunicorn)
 if __name__ == "__main__":
     Thread(target=iniciar_bot).start()
-    port = int(os.environ.get("PORT", 5000))
-    print(f"🌐 Servidor Flask ouvindo na porta {port}")
-    web_app.run(host="0.0.0.0", port=port)
