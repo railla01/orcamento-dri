@@ -14,4 +14,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 8080
 
 # Comando para rodar o bot (ajuste se o seu arquivo principal for diferente)
-CMD ["python", "web.py"]
+CMD ["gunicorn", "web:web_app", "--bind", "0.0.0.0:5000"]
