@@ -3,17 +3,17 @@ from threading import Thread
 from flask import Flask
 import os
 
-# Inicializa o bot em paralelo
-def iniciar_bot():
-    print("🤖 DRI rodando via Web Service no Render!", flush=True)
-    app.run()
-
 # Web app do Flask
 web_app = Flask(__name__)
 
 @web_app.route("/")
 def home():
     return "✅ DRI Bot está online!"
+
+# Inicializa o bot em paralelo
+def iniciar_bot():
+    print("🤖 DRI rodando via Web Service no Render!", flush=True)
+    app.run()
 
 # Start apenas do bot (Flask é gerenciado pelo Gunicorn)
 if __name__ == "__main__":
