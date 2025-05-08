@@ -5,7 +5,7 @@ import os
 
 # Inicializa o bot em paralelo
 def iniciar_bot():
-    print("🤖 DRI rodando via Web Service no Render!")
+    print("🤖 DRI rodando via Web Service no Render!", flush=True)
     app.run()
 
 # Web app do Flask
