@@ -9,7 +9,7 @@ def iniciar_bot():
     app.run()
 
 # Web app do Flask
-web_app = Flask("DRI-Flask")
+web_app = Flask(__name__)
 
 @web_app.route("/")
 def home():
