@@ -17,4 +17,4 @@ def home():
 
 # Start apenas do bot (Flask é gerenciado pelo Gunicorn)
 if __name__ == "__main__":
-    Thread(target=iniciar_bot).start()
+    Thread(target=iniciar_bot, daemon=True).start()
